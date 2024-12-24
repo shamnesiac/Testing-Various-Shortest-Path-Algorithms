@@ -405,6 +405,34 @@ void dijkstra_fibonacci_heap(const Graph& graph, int start, int goal, bool print
         cout << "Dijkstra (Fibonacci Heap) distance from " << start << " to " << goal << ": " << dist[goal] << endl;
 }
 
+int dijkstra_fibonacci_heap(const Graph& graph, int start, int goal, bool print_result, bool return_result)
+{
+    using FibHeap = boost::heap::fibonacci_heap<pair<int, int>, boost::heap::compare<greater<>>>;
+    vector<int> dist(graph.node_num, numeric_limits<int>::max());
+    FibHeap pq;
+
+    dist[start] = 0;
+    pq.push({ dist[start], start });
+
+    while (!pq.empty())
+    {
+        int u = pq.top().second;
+        pq.pop();
+
+        for (const auto& [v, length] : graph.adj_list[u])
+        {
+            if (dist[u] + length < dist[v])
+            {
+                dist[v] = dist[u] + length;
+                pq.push({ dist[v], v });
+            }
+        }
+    }
+    if (return_result)
+        return dist[goal];
+    return 0;
+}
+
 void a_star_brute_force_ve(const Graph& graph, int start, int goal, int max_length, bool print_result)
 {
     vector<int> dist(graph.node_num, numeric_limits<int>::max());
@@ -765,6 +793,41 @@ void a_star_fibonacci_heap(const Graph& graph, int start, int goal, int max_leng
         cout << "A* (Fibonacci Heap) distance from " << start << " to " << goal << ": " << dist[goal] << endl;
 }
 
+int a_star_fibonacci_heap(const Graph& graph, int start, int goal, int max_length, bool print_result, bool return_result)
+{
+    using FibHeap = boost::heap::fibonacci_heap<pair<int, int>, boost::heap::compare<greater<>>>;
+    vector<int> dist(graph.node_num, numeric_limits<int>::max());
+    vector<int> heuristic(graph.node_num, 0);
+    FibHeap pq;
+
+    for (const auto& node : graph.nodes)
+        heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
+
+    dist[start] = 0;
+    pq.push({ dist[start], start });
+
+    while (!pq.empty())
+    {
+        int u = pq.top().second;
+        pq.pop();
+
+        if (u == goal)
+            break;
+
+        for (const auto& [v, length] : graph.adj_list[u])
+        {
+            if (dist[u] + length < dist[v])
+            {
+                dist[v] = dist[u] + length;
+                pq.push({ dist[v] + heuristic[v], v });
+            }
+        }
+    }
+    if (return_result)
+        return dist[goal];
+    return 0;
+}
+
 double monitor_time(const string& name, const function<void()>& func)
 {
     auto start = chrono::high_resolution_clock::now();
@@ -1043,6 +1106,24 @@ void test_a_star_special_heap(int num_nodes, int nodes_per_layer, int max_length
     cout << endl;
 }
 
+void test_a_star_precision(int num_nodes, int nodes_per_layer, int max_length, int num_iter, bool print_result, bool return_result)
+{
+    vector<Graph>graphs(num_iter, Graph(num_nodes, nodes_per_layer));
+    for (auto& i : graphs)
+        i.connect_layers(max_length);
+    vector<double>over_estimation(num_iter);
+    if (!return_result)
+        return;
+    for (int i = 0; i < num_iter; i++)
+    {
+        int dijkstra_result = 150;
+        int a_star_result = 300;
+        over_estimation[i] = ((double) a_star_result - (double) dijkstra_result) / (double) dijkstra_result;
+    }
+    double avg_over_estimation = (accumulate(over_estimation.begin(), over_estimation.end(), 0.0) / over_estimation.size()) * 100;
+    cout << "Overestimation Percentage of A* Algorithm is: " << avg_over_estimation << "%" << endl;
+}
+
 int main()
 {
     test_all(102, 10, 1001, 10, false);
@@ -1052,5 +1133,6 @@ int main()
     test_all_special_heap(10002, 200, 1001, 1, false);
     test_a_star_special_heap(50002, 500, 1001, 1, false);
     test_a_star_special_heap(100002, 500, 1001, 1, false);
+    test_a_star_precision(102, 10, 1001, 50000, false, true);
     return 0;
 }

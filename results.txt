@@ -1,120 +1,122 @@
 Average execution times for num_nodes = 102, nodes_per_layer = 10
 
-Bellman Ford: 1.689770 milli-seconds
-Dijkstra (Brute Force VE): 4.243760 milli-seconds
-Dijkstra (Brute Force VV): 1.850980 milli-seconds
-Dijkstra (Binary Heap): 1.362420 milli-seconds
-Dijkstra (Ternary Heap): 1.182610 milli-seconds
-Dijkstra (Quaternary Heap): 1.287240 milli-seconds
-Dijkstra (Denary Heap): 2.091420 milli-seconds
-Dijkstra (Binomial Heap): 5.959470 milli-seconds
-Dijkstra (Pairing Heap): 0.756880 milli-seconds
-Dijkstra (Skew Heap): 0.354070 milli-seconds
-Dijkstra (Fibonacci Heap): 1.074040 milli-seconds
-A* (Brute Force VE): 0.422000 milli-seconds
-A* (Brute Force VV): 0.322510 milli-seconds
-A* (Binary Heap): 0.377660 milli-seconds
-A* (Ternary Heap): 0.373090 milli-seconds
-A* (Quaternary Heap): 0.343530 milli-seconds
-A* (Denary Heap): 0.305480 milli-seconds
-A* (Binomial Heap): 0.223350 milli-seconds
-A* (Pairing Heap): 0.142580 milli-seconds
-A* (Skew Heap): 0.051980 milli-seconds
-A* (Fibonacci Heap): 0.118000 milli-seconds
+Bellman Ford: 2.678700 milli-seconds
+Dijkstra (Brute Force VE): 4.848910 milli-seconds
+Dijkstra (Brute Force VV): 6.225010 milli-seconds
+Dijkstra (Binary Heap): 4.361340 milli-seconds
+Dijkstra (Ternary Heap): 2.748190 milli-seconds
+Dijkstra (Quaternary Heap): 1.925940 milli-seconds
+Dijkstra (Denary Heap): 1.562990 milli-seconds
+Dijkstra (Binomial Heap): 3.599990 milli-seconds
+Dijkstra (Pairing Heap): 0.980300 milli-seconds
+Dijkstra (Skew Heap): 0.300980 milli-seconds
+Dijkstra (Fibonacci Heap): 0.792890 milli-seconds
+A* (Brute Force VE): 0.487810 milli-seconds
+A* (Brute Force VV): 0.418670 milli-seconds
+A* (Binary Heap): 0.483540 milli-seconds
+A* (Ternary Heap): 0.568170 milli-seconds
+A* (Quaternary Heap): 0.666950 milli-seconds
+A* (Denary Heap): 0.397810 milli-seconds
+A* (Binomial Heap): 0.355160 milli-seconds
+A* (Pairing Heap): 0.287920 milli-seconds
+A* (Skew Heap): 0.086340 milli-seconds
+A* (Fibonacci Heap): 0.138490 milli-seconds
 
 Average execution times for num_nodes = 502, nodes_per_layer = 20
 
-Bellman Ford: 49.566240 milli-seconds
-Dijkstra (Brute Force VE): 46.588770 milli-seconds
-Dijkstra (Brute Force VV): 40.257880 milli-seconds
-Dijkstra (Binary Heap): 14.692150 milli-seconds
-Dijkstra (Ternary Heap): 11.417320 milli-seconds
-Dijkstra (Quaternary Heap): 10.244710 milli-seconds
-Dijkstra (Denary Heap): 8.474010 milli-seconds
-Dijkstra (Binomial Heap): 14.308830 milli-seconds
-Dijkstra (Pairing Heap): 4.454470 milli-seconds
-Dijkstra (Skew Heap): 1.453760 milli-seconds
-Dijkstra (Fibonacci Heap): 3.498980 milli-seconds
-A* (Brute Force VE): 2.890810 milli-seconds
-A* (Brute Force VV): 2.277000 milli-seconds
-A* (Binary Heap): 2.310170 milli-seconds
-A* (Ternary Heap): 2.649200 milli-seconds
-A* (Quaternary Heap): 2.000200 milli-seconds
-A* (Denary Heap): 1.941350 milli-seconds
-A* (Binomial Heap): 0.632710 milli-seconds
-A* (Pairing Heap): 0.768530 milli-seconds
-A* (Skew Heap): 0.222790 milli-seconds
-A* (Fibonacci Heap): 0.476460 milli-seconds
+Bellman Ford: 97.470360 milli-seconds
+Dijkstra (Brute Force VE): 94.812990 milli-seconds
+Dijkstra (Brute Force VV): 85.801550 milli-seconds
+Dijkstra (Binary Heap): 22.745030 milli-seconds
+Dijkstra (Ternary Heap): 16.360500 milli-seconds
+Dijkstra (Quaternary Heap): 14.731210 milli-seconds
+Dijkstra (Denary Heap): 14.213330 milli-seconds
+Dijkstra (Binomial Heap): 19.805360 milli-seconds
+Dijkstra (Pairing Heap): 6.757550 milli-seconds
+Dijkstra (Skew Heap): 2.695020 milli-seconds
+Dijkstra (Fibonacci Heap): 5.955220 milli-seconds
+A* (Brute Force VE): 5.908550 milli-seconds
+A* (Brute Force VV): 3.822960 milli-seconds
+A* (Binary Heap): 4.194450 milli-seconds
+A* (Ternary Heap): 5.066340 milli-seconds
+A* (Quaternary Heap): 3.632360 milli-seconds
+A* (Denary Heap): 3.014640 milli-seconds
+A* (Binomial Heap): 1.031990 milli-seconds
+A* (Pairing Heap): 1.223400 milli-seconds
+A* (Skew Heap): 0.414460 milli-seconds
+A* (Fibonacci Heap): 0.635540 milli-seconds
 
 Average execution times for num_nodes = 1002, nodes_per_layer = 50
 
-Bellman Ford: 384.132650 milli-seconds
-Dijkstra (Brute Force VE): 234.705060 milli-seconds
-Dijkstra (Brute Force VV): 183.684320 milli-seconds
-Dijkstra (Binary Heap): 62.680970 milli-seconds
-Dijkstra (Ternary Heap): 58.104180 milli-seconds
-Dijkstra (Quaternary Heap): 55.363270 milli-seconds
-Dijkstra (Denary Heap): 51.864230 milli-seconds
-Dijkstra (Binomial Heap): 41.090470 milli-seconds
-Dijkstra (Pairing Heap): 20.729810 milli-seconds
-Dijkstra (Skew Heap): 5.690490 milli-seconds
-Dijkstra (Fibonacci Heap): 18.833320 milli-seconds
-A* (Brute Force VE): 9.862450 milli-seconds
-A* (Brute Force VV): 6.900510 milli-seconds
-A* (Binary Heap): 9.101040 milli-seconds
-A* (Ternary Heap): 8.295870 milli-seconds
-A* (Quaternary Heap): 7.335060 milli-seconds
-A* (Denary Heap): 6.368690 milli-seconds
-A* (Binomial Heap): 1.540790 milli-seconds
-A* (Pairing Heap): 3.057630 milli-seconds
-A* (Skew Heap): 0.732910 milli-seconds
-A* (Fibonacci Heap): 1.080460 milli-seconds
+Bellman Ford: 566.091490 milli-seconds
+Dijkstra (Brute Force VE): 248.655370 milli-seconds
+Dijkstra (Brute Force VV): 194.763090 milli-seconds
+Dijkstra (Binary Heap): 48.223960 milli-seconds
+Dijkstra (Ternary Heap): 51.380490 milli-seconds
+Dijkstra (Quaternary Heap): 43.081560 milli-seconds
+Dijkstra (Denary Heap): 37.179650 milli-seconds
+Dijkstra (Binomial Heap): 29.920200 milli-seconds
+Dijkstra (Pairing Heap): 15.456150 milli-seconds
+Dijkstra (Skew Heap): 4.197990 milli-seconds
+Dijkstra (Fibonacci Heap): 12.522550 milli-seconds
+A* (Brute Force VE): 5.545280 milli-seconds
+A* (Brute Force VV): 4.385300 milli-seconds
+A* (Binary Heap): 5.035850 milli-seconds
+A* (Ternary Heap): 4.734050 milli-seconds
+A* (Quaternary Heap): 4.206970 milli-seconds
+A* (Denary Heap): 4.013400 milli-seconds
+A* (Binomial Heap): 1.082730 milli-seconds
+A* (Pairing Heap): 2.113160 milli-seconds
+A* (Skew Heap): 0.505850 milli-seconds
+A* (Fibonacci Heap): 0.769710 milli-seconds
 
 Average execution times for num_nodes = 5002, nodes_per_layer = 100
 
-Bellman Ford: 25348.238880 milli-seconds
-Dijkstra (Brute Force VE): 7655.704100 milli-seconds
-Dijkstra (Brute Force VV): 4697.380140 milli-seconds
-Dijkstra (Binary Heap): 798.843920 milli-seconds
-Dijkstra (Ternary Heap): 722.224820 milli-seconds
-Dijkstra (Quaternary Heap): 741.998380 milli-seconds
-Dijkstra (Denary Heap): 680.192920 milli-seconds
-Dijkstra (Binomial Heap): 230.020940 milli-seconds
-Dijkstra (Pairing Heap): 124.252200 milli-seconds
-Dijkstra (Skew Heap): 37.991320 milli-seconds
-Dijkstra (Fibonacci Heap): 97.364480 milli-seconds
-A* (Brute Force VE): 82.766040 milli-seconds
-A* (Brute Force VV): 51.470460 milli-seconds
-A* (Binary Heap): 79.150200 milli-seconds
-A* (Ternary Heap): 79.840020 milli-seconds
-A* (Quaternary Heap): 75.464460 milli-seconds
-A* (Denary Heap): 70.339240 milli-seconds
-A* (Binomial Heap): 4.933560 milli-seconds
-A* (Pairing Heap): 12.427700 milli-seconds
-A* (Skew Heap): 2.704540 milli-seconds
-A* (Fibonacci Heap): 3.803600 milli-seconds
+Bellman Ford: 23986.438000 milli-seconds
+Dijkstra (Brute Force VE): 7594.538420 milli-seconds
+Dijkstra (Brute Force VV): 4533.723380 milli-seconds
+Dijkstra (Binary Heap): 763.566200 milli-seconds
+Dijkstra (Ternary Heap): 705.276220 milli-seconds
+Dijkstra (Quaternary Heap): 765.924180 milli-seconds
+Dijkstra (Denary Heap): 729.815780 milli-seconds
+Dijkstra (Binomial Heap): 229.977340 milli-seconds
+Dijkstra (Pairing Heap): 120.915020 milli-seconds
+Dijkstra (Skew Heap): 38.494160 milli-seconds
+Dijkstra (Fibonacci Heap): 98.534380 milli-seconds
+A* (Brute Force VE): 78.773560 milli-seconds
+A* (Brute Force VV): 48.970780 milli-seconds
+A* (Binary Heap): 81.530660 milli-seconds
+A* (Ternary Heap): 83.235460 milli-seconds
+A* (Quaternary Heap): 73.939020 milli-seconds
+A* (Denary Heap): 74.669080 milli-seconds
+A* (Binomial Heap): 4.804200 milli-seconds
+A* (Pairing Heap): 12.422000 milli-seconds
+A* (Skew Heap): 2.574240 milli-seconds
+A* (Fibonacci Heap): 3.663620 milli-seconds
 
 Average execution times for num_nodes = 10002, nodes_per_layer = 200
 
-Dijkstra (Binomial Heap): 609.801900 milli-seconds
-Dijkstra (Skew Heap): 113.514700 milli-seconds
-Dijkstra (Pairing Heap): 330.091700 milli-seconds
-Dijkstra (Fibonacci Heap): 291.079200 milli-seconds
-A* (Binomial Heap): 9.650600 milli-seconds
-A* (Pairing Heap): 33.169700 milli-seconds
-A* (Skew Heap): 5.899600 milli-seconds
-A* (Fibonacci Heap): 7.839700 milli-seconds
+Dijkstra (Binomial Heap): 578.644100 milli-seconds
+Dijkstra (Pairing Heap): 327.742300 milli-seconds
+Dijkstra (Skew Heap): 115.863300 milli-seconds
+Dijkstra (Fibonacci Heap): 285.172600 milli-seconds
+A* (Binomial Heap): 11.022800 milli-seconds
+A* (Pairing Heap): 29.956000 milli-seconds
+A* (Skew Heap): 5.727900 milli-seconds
+A* (Fibonacci Heap): 7.971300 milli-seconds
 
 Average execution times for num_nodes = 50002, nodes_per_layer = 500
 
-A* (Binomial Heap): 51.536200 milli-seconds
-A* (Pairing Heap): 187.656100 milli-seconds
-A* (Skew Heap): 35.367100 milli-seconds
-A* (Fibonacci Heap): 37.049200 milli-seconds
+A* (Binomial Heap): 51.538500 milli-seconds
+A* (Pairing Heap): 190.125700 milli-seconds
+A* (Skew Heap): 45.233600 milli-seconds
+A* (Fibonacci Heap): 47.768900 milli-seconds
 
 Average execution times for num_nodes = 100002, nodes_per_layer = 500
 
-A* (Binomial Heap): 101.316000 milli-seconds
-A* (Pairing Heap): 378.627000 milli-seconds
-A* (Skew Heap): 91.043300 milli-seconds
-A* (Fibonacci Heap): 76.197200 milli-seconds
+A* (Binomial Heap): 107.809100 milli-seconds
+A* (Pairing Heap): 427.544100 milli-seconds
+A* (Skew Heap): 127.035100 milli-seconds
+A* (Fibonacci Heap): 124.198900 milli-seconds
+
+Overestimation Percentage of A* Algorithm is: 65.1559%
