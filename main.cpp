@@ -150,8 +150,6 @@ void dijkstra_brute_force_vv(const Graph& graph, int start, int goal, bool print
     for (int i = 0; i < graph.node_num; ++i)
     {
         int u = -1;
-
-        // Find the unvisited node with the smallest distance
         for (int j = 0; j < graph.node_num; ++j)
         {
             if (!visited[j] && (u == -1 || dist[j] < dist[u]))
@@ -162,8 +160,6 @@ void dijkstra_brute_force_vv(const Graph& graph, int start, int goal, bool print
             break;
 
         visited[u] = true;
-
-        // Relax all neighbors of u
         for (const auto& [v, length] : graph.adj_list[u])
         {
             if (dist[u] + length < dist[v])
@@ -415,7 +411,6 @@ void a_star_brute_force_ve(const Graph& graph, int start, int goal, int max_leng
     vector<bool> visited(graph.node_num, false);
     vector<int> heuristic(graph.node_num);
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -425,8 +420,6 @@ void a_star_brute_force_ve(const Graph& graph, int start, int goal, int max_leng
     {
         int u = -1;
         int min_f = numeric_limits<int>::max();
-
-        // Find the unvisited node with the smallest f(u) = g(u) + h(u)
         for (int j = 0; j < graph.node_num; ++j)
         {
             if (!visited[j] && dist[j] != numeric_limits<int>::max())
@@ -444,8 +437,6 @@ void a_star_brute_force_ve(const Graph& graph, int start, int goal, int max_leng
             break;
 
         visited[u] = true;
-
-        // Relax edges
         for (const auto& edge : graph.edges)
         {
             if (edge.from == u)
@@ -466,7 +457,6 @@ void a_star_brute_force_vv(const Graph& graph, int start, int goal, int max_leng
     vector<bool> visited(graph.node_num, false);
     vector<int> heuristic(graph.node_num);
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -476,8 +466,6 @@ void a_star_brute_force_vv(const Graph& graph, int start, int goal, int max_leng
     {
         int u = -1;
         int min_f = numeric_limits<int>::max();
-
-        // Find the unvisited node with the smallest f(u) = g(u) + h(u)
         for (int j = 0; j < graph.node_num; ++j)
         {
             if (!visited[j] && dist[j] != numeric_limits<int>::max())
@@ -495,8 +483,6 @@ void a_star_brute_force_vv(const Graph& graph, int start, int goal, int max_leng
             break;
 
         visited[u] = true;
-
-        // Relax edges for all neighbors of `u`
         for (const auto& [v, length] : graph.adj_list[u])
         {
             if (!visited[v] && dist[u] + length < dist[v])
@@ -514,7 +500,6 @@ void a_star_binary_heap(const Graph& graph, int start, int goal, int max_length,
     vector<int> heuristic(graph.node_num, 0);
     BinaryHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -549,7 +534,6 @@ void a_star_ternary_heap(const Graph& graph, int start, int goal, int max_length
     vector<int> heuristic(graph.node_num, 0);
     TernaryHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -584,7 +568,6 @@ void a_star_quaternary_heap(const Graph& graph, int start, int goal, int max_len
     vector<int> heuristic(graph.node_num, 0);
     QuaternaryHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -619,7 +602,6 @@ void a_star_denary_heap(const Graph& graph, int start, int goal, int max_length,
     vector<int> heuristic(graph.node_num, 0);
     DenaryHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -654,7 +636,6 @@ void a_star_binomial_heap(const Graph& graph, int start, int goal, int max_lengt
     vector<int> heuristic(graph.node_num, 0);
     BinHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -689,7 +670,6 @@ void a_star_pairing_heap(const Graph& graph, int start, int goal, int max_length
     vector<int> heuristic(graph.node_num, 0);
     PairingHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -724,7 +704,6 @@ void a_star_skew_heap(const Graph& graph, int start, int goal, int max_length, b
     vector<int> heuristic(graph.node_num, 0);
     SkewHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -759,7 +738,6 @@ void a_star_fibonacci_heap(const Graph& graph, int start, int goal, int max_leng
     vector<int> heuristic(graph.node_num, 0);
     FibHeap pq;
 
-    // Calculate heuristic
     for (const auto& node : graph.nodes)
         heuristic[node.id] = ((max_length + 1) / 2) * abs(graph.nodes[goal].layer - node.layer);
 
@@ -811,8 +789,8 @@ void test_all(int num_nodes, int nodes_per_layer, int max_length, int num_iter, 
         {"Dijkstra (Quaternary Heap)", [&]() { dijkstra_quaternary_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Denary Heap)", [&]() { dijkstra_denary_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Binomial Heap)", [&]() { dijkstra_binomial_heap(graph, 0, num_nodes - 1, print_result); }},
-        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Pairing Heap)", [&]() { dijkstra_pairing_heap(graph, 0, num_nodes - 1, print_result); }},
+        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Fibonacci Heap)", [&]() { dijkstra_fibonacci_heap(graph, 0, num_nodes - 1, print_result); }},
         {"A* (Brute Force VE)", [&]() { a_star_brute_force_ve(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Brute Force VV)", [&]() { a_star_brute_force_vv(graph, 0, num_nodes - 1, max_length, print_result); }},
@@ -821,8 +799,8 @@ void test_all(int num_nodes, int nodes_per_layer, int max_length, int num_iter, 
         {"A* (Quaternary Heap)", [&]() { a_star_quaternary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Denary Heap)", [&]() { a_star_denary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Binomial Heap)", [&]() { a_star_binomial_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
-        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Pairing Heap)", [&]() { a_star_pairing_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
+        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Fibonacci Heap)", [&]() { a_star_fibonacci_heap(graph, 0, num_nodes - 1, max_length, print_result); }}
     };
     vector<pair<string, double>> results;
@@ -859,8 +837,8 @@ void test_dijkstra(int num_nodes, int nodes_per_layer, int max_length, int num_i
         {"Dijkstra (Quaternary Heap)", [&]() { dijkstra_quaternary_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Denary Heap)", [&]() { dijkstra_denary_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Binomial Heap)", [&]() { dijkstra_binomial_heap(graph, 0, num_nodes - 1, print_result); }},
-        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Pairing Heap)", [&]() { dijkstra_pairing_heap(graph, 0, num_nodes - 1, print_result); }},
+        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Fibonacci Heap)", [&]() { dijkstra_fibonacci_heap(graph, 0, num_nodes - 1, print_result); }}
     };
     vector<pair<string, double>> results;
@@ -897,8 +875,8 @@ void test_a_star(int num_nodes, int nodes_per_layer, int max_length, int num_ite
         {"A* (Quaternary Heap)", [&]() { a_star_quaternary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Denary Heap)", [&]() { a_star_denary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Binomial Heap)", [&]() { a_star_binomial_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
-        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Pairing Heap)", [&]() { a_star_pairing_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
+        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Fibonacci Heap)", [&]() { a_star_fibonacci_heap(graph, 0, num_nodes - 1, max_length, print_result); }}
     };
     vector<pair<string, double>> results;
@@ -933,16 +911,16 @@ void test_all_heap(int num_nodes, int nodes_per_layer, int max_length, int num_i
         {"Dijkstra (Quaternary Heap)", [&]() { dijkstra_quaternary_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Denary Heap)", [&]() { dijkstra_denary_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Binomial Heap)", [&]() { dijkstra_binomial_heap(graph, 0, num_nodes - 1, print_result); }},
-        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Pairing Heap)", [&]() { dijkstra_pairing_heap(graph, 0, num_nodes - 1, print_result); }},
+        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Fibonacci Heap)", [&]() { dijkstra_fibonacci_heap(graph, 0, num_nodes - 1, print_result); }},
         {"A* (Binary Heap)", [&]() { a_star_binary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Ternary Heap)", [&]() { a_star_ternary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Quaternary Heap)", [&]() { a_star_quaternary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Denary Heap)", [&]() { a_star_denary_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Binomial Heap)", [&]() { a_star_binomial_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
-        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Pairing Heap)", [&]() { a_star_pairing_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
+        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Fibonacci Heap)", [&]() { a_star_fibonacci_heap(graph, 0, num_nodes - 1, max_length, print_result); }}
     };
     vector<pair<string, double>> results;
@@ -973,12 +951,12 @@ void test_all_special_heap(int num_nodes, int nodes_per_layer, int max_length, i
     Graph graph(num_nodes, nodes_per_layer);
     vector<pair<string, function<void()>>> functions = {
         {"Dijkstra (Binomial Heap)", [&]() { dijkstra_binomial_heap(graph, 0, num_nodes - 1, print_result); }},
-        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Pairing Heap)", [&]() { dijkstra_pairing_heap(graph, 0, num_nodes - 1, print_result); }},
+        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Fibonacci Heap)", [&]() { dijkstra_fibonacci_heap(graph, 0, num_nodes - 1, print_result); }},
         {"A* (Binomial Heap)", [&]() { a_star_binomial_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
-        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Pairing Heap)", [&]() { a_star_pairing_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
+        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Fibonacci Heap)", [&]() { a_star_fibonacci_heap(graph, 0, num_nodes - 1, max_length, print_result); }}
     };
     vector<pair<string, double>> results;
@@ -1009,8 +987,8 @@ void test_dijkstra_special_heap(int num_nodes, int nodes_per_layer, int max_leng
     Graph graph(num_nodes, nodes_per_layer);
     vector<pair<string, function<void()>>> functions = {
         {"Dijkstra (Binomial Heap)", [&]() { dijkstra_binomial_heap(graph, 0, num_nodes - 1, print_result); }},
-        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Pairing Heap)", [&]() { dijkstra_pairing_heap(graph, 0, num_nodes - 1, print_result); }},
+        {"Dijkstra (Skew Heap)", [&]() { dijkstra_skew_heap(graph, 0, num_nodes - 1, print_result); }},
         {"Dijkstra (Fibonacci Heap)", [&]() { dijkstra_fibonacci_heap(graph, 0, num_nodes - 1, print_result); }}
     };
     vector<pair<string, double>> results;
@@ -1041,8 +1019,8 @@ void test_a_star_special_heap(int num_nodes, int nodes_per_layer, int max_length
     Graph graph(num_nodes, nodes_per_layer);
     vector<pair<string, function<void()>>> functions = {
         {"A* (Binomial Heap)", [&]() { a_star_binomial_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
-        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Pairing Heap)", [&]() { a_star_pairing_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
+        {"A* (Skew Heap)", [&]() { a_star_skew_heap(graph, 0, num_nodes - 1, max_length, print_result); }},
         {"A* (Fibonacci Heap)", [&]() { a_star_fibonacci_heap(graph, 0, num_nodes - 1, max_length, print_result); }}
     };
     vector<pair<string, double>> results;
